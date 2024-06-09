@@ -1,0 +1,31 @@
+---
+- name: Update repositories cache
+  become: true
+  apt:
+    update_cache: yes 
+# - name: "Add .Nodejs from Nodesource"
+#   become: yes
+#   shell: |
+#     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+  # update_cache: yes
+- name: "Update apt cache and make sure Vim is installed"
+  become: true
+  apt:
+    name: vim
+    update_cache: yes
+- name: Update apt cache and make sure Vim is installed
+  become: true
+  apt:
+    name: ["nodejs"]
+    update_cache: yes
+- name: Update apt cache and make sure Vim is installed
+  become: true
+  apt:
+    name: ["npm"]
+    update_cache: yes
+- name: "install pm2 globally"
+  become: true 
+  npm:
+    name: pm2
+    global: yes
+  
